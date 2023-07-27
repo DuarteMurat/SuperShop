@@ -15,12 +15,12 @@ namespace SuperShop.Data.Entities
         public Product Product { get; set; }
 
 
-        [DisplayFormat(DataFormatString = "(0:C2)")]
+        [DisplayFormat(DataFormatString = "{0:C2}")]
         public decimal Price { get; set; }
 
 
-        [DisplayFormat(DataFormatString = "(0:N2)")]
-        public decimal Quantity { get; set; }
+        [DisplayFormat(DataFormatString = "{0:N2}")]
+        public double Quantity { get; set; }
 
 
         public decimal Value => Price * (decimal)Quantity;

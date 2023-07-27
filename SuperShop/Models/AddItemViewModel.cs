@@ -19,6 +19,5 @@ namespace SuperShop.Models
 
         public IEnumerable<SelectListItem> Products { get; set; }
 
-        
     }
 }
