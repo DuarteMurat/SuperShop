@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SuperShop.Data.Entities;
 using SuperShop.Helpers;
 using SuperShop.Models;
@@ -109,6 +110,18 @@ namespace SuperShop.Data
                 _context.OrderDetailsTemp.Update(orderDetailTemp);
                 await _context.SaveChangesAsync();
             }
+        }
+
+        public async Task DeleteDetailTempAsync(int id)
+        {
+            var orderDetailTemp = await _context.OrderDetailsTemp.FindAsync(id);
+            if (orderDetailTemp == null)
+            {
+                return;
+            }
+
+            _context.OrderDetailsTemp.Remove(orderDetailTemp);
+            await _context.SaveChangesAsync();
         }
     }
 }

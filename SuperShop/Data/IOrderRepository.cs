@@ -1,5 +1,6 @@
 ﻿using SuperShop.Data.Entities;
 using SuperShop.Models;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,5 +15,7 @@ namespace SuperShop.Data
         Task AddItemToOrderAsync(AddItemViewModel model, string userName);
 
         Task ModifyOrderDetailTempQuantityAsync(int id, double quantity);
+
+        Task DeleteDetailTempAsync(int id);
     }
 }
